@@ -1,0 +1,59 @@
+
+<div class="col" style="text-align: center; font-family: Tahoma;">
+  <form [formGroup]="carta" (ngSubmit)="guardar(carta)" style="padding:50px;">        
+    <div class="form-group row">
+      <h1 style="text-align:initial;padding-right: 50px;">Ingrese el día del Sol en Marte:</h1>
+        <input formControlName="numsol" id="numsol" type="text" class="form-control" placeholder="Ingrese el dia de captura de fotos, ej: 101">
+        <div class="col" style="padding:30px;">  
+          <select class="form-control" id='comboCamaras' (change)="vehiculo($event)" name="lente" formControlName="lente">
+              <option value="" disabled selected hidden>Seleccion Rover</option>  
+              <option value="spirit"><b>Spirit</b></option>
+              <option value="curiosity"><b>Curiosity</b></option>
+              <option value="opportunity"><b>Oportunity</b></option>
+          </select>
+        </div>
+    </div>
+    <div class="col" style="column-count: 2;">
+      <button class="btn btn-outline-primary btn-block mb-2 mt-1" type="submit" (click)="getMision0()"><b>Buscar</b></button>
+      <button class="btn btn-outline-warning btn-block mb-2 mt-2" (click)="mostrar = !mostrar" style="padding-top: 10px;"><b>Busqueda Avanzada</b></button> 
+    </div>
+      <div *ngIf="mostrar" > 
+        <br><br>         
+        <h4 style="text-align: center; font-family: Tahoma;">Seleccione camara del Rover:</h4>
+        <br><br>
+        <div class="form-group row" style="column-count: 3;">
+          <div class="col" style="padding-left:100px;">
+              <h4><input  class="form-control" type="radio" value="rhaz" name="gender" 
+              formControlName="gender" (change)="comboCam($event)">R.H.A.Z.</h4>
+          </div>
+          <div class="col" style="padding-left:100px;" >
+              <h4><input  class="form-control" type="radio" value="fhaz" name="gender" 
+                formControlName="gender" (change)="comboCam($event)">F.H.A.Z.</h4>
+          </div>
+          <div class="col" style="padding-left:100px;">
+              <h4><input  class="form-control" type="radio" value="navcam" name="gender" 
+              formControlName="gender" (change)="comboCam($event)">NAV.CAM</h4>
+          </div>      
+        </div>
+          <button type="submit" (click)="getMision1()" class="btn btn-outline-primary btn-block" >Fotos por Camara</button>  
+          <br><br> 
+          <div class="col" style="padding:30px">
+          <input type="date" [value]="fecha | date: 'YYYY-MM-dd'" formControlname="tiempo" id="tiempo" 
+          class="form-control" (change)="fechar($event)">
+        </div>
+        <button class="btn btn-outline-primary btn-block mt-2" type="submit" (click)="getMision2()"><b>Fotos por fecha</b></button>
+        <div class="col" style="text-align:center;padding:90px;">
+          <h5 > FOTOS DE ROVER:<b>'<u>{{ rr }}</u>'</b> CON CAMARA: <b>'<u>{{ ff }}</u>'</b> EL DIA: <b>'<u>{{ gg }} {{ jj }}</u>'</b> </h5> 
+        </div>
+      </div>
+  </form>
+    <div style="text-align: center;">
+      <div *ngFor="let a of arreglo2" style="padding-top: 80px;">
+        <p>Foto Nº: <b>{{ a.id }}</b></p>
+        <img width="400" height="300" [src]="a.img_src" >
+      </div>
+    </div>
+</div>
+<!-- requerid pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" -->
+      
+  
