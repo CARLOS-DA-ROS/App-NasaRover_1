@@ -1,0 +1,3 @@
+Se debe tener instalado el Node.js, abrir la terminal cmd en la carpeta que contiene al angular.json y ejecutar 
+el comando ng serve -o (debe tener instalado Angular, con el comando: npm install -g @angular/cli ), luego abrir el 
+browser (Firefox, Edge, Opera, etc) en 'http://localhost:4200'
