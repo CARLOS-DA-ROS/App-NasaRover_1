@@ -1,0 +1,19 @@
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="font-family:Tahoma;">
+        <div class="navbar-collapse" >
+            <ul class="nav navbar-nav mr-auto" >   
+                <li class="nav-item active" routerLinkActive="active">
+                    <a class="nav-link mr-4 btn-outline-warning" [routerLink]="['home']" tabindex="1" ><b>Inicio</b></a>
+                </li>							
+                <li class="nav-item active" routerLinkActive="active">
+                    <a class="nav-link mr-4 btn-outline-warning" [routerLink]="['search/:']" tabindex="2" ><b>Rovers</b></a>
+                </li>
+                <li class="nav-item active" routerLinkActive="active">
+                    <a class="nav-link mr-4 btn-outline-warning" [routerLink]="['rovers']" tabindex="3" ><b>Fotos</b></a>
+                </li>            
+            </ul>
+        </div>
+        <form class="form-inline my-2 my-lg-0">
+                <a class="navbar-brand mr-sm-2" style="color: darkred;"><b>Mars-Rover&trade;</b></a>
+	    </form>
+    </nav>
