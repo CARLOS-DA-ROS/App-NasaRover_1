@@ -1,0 +1,12 @@
+<div class="col" style="text-align: center;padding: 50px;">
+    <h1 style="font-family: Tahoma;padding: 100px;"><B>Astronomy Picture of the Day</B> {{ dd }} </h1>
+
+    <div class="row" style="text-align: center;padding: 100px;">
+        <div *ngIf="mostrar" style="padding-top: 80px;">
+            <h3 style="padding-bottom: 50px;">{{ aa }}</h3>
+            <img [src]="bb" width="500" height="400" >
+            <p style="padding:50px;"> <b>Descripcion: </b> {{ cc }}</p>
+            
+        </div>
+    </div>
+</div>
